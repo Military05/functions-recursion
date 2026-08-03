@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build current C++ file",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+            "args": [
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "-pedantic",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "options": {
+                "env": {
+                    "Path": "C:\\msys64\\ucrt64\\bin;${env:Path}"
+                }
+            },
+            "detail": "Compiles the currently opened C++ file with g++."
+        }
+    ]
+}
