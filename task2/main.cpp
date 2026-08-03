@@ -1,3 +1,7 @@
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include <iostream>
 
 int power(int value, int exponent)
@@ -14,6 +18,11 @@ int power(int value, int exponent)
 
 int main()
 {
+#ifdef _WIN32
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
+#endif
+
     int value = 5;
     int exponent = 2;
     int result = power(value, exponent);
